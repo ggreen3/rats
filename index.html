@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RATS Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>RATS</h1>
+        <div id="token-counter">Tokens: 100</div>
+    </header>
+
+    <!-- Marquee for announcements -->
+  
+    <div class="marquee">
+        <div class="marquee-content">
+            🐭 Welcome to the Ratverse! Earn tokens by playing, referring friends, and completing tasks!
+        </div>
+    </div>
+    
+
+    <!-- Game Area -->
+    <div id="game">
+        <div id="rat-tap-zone">
+            <img id="rat" src="c:\Users\LENOVO\Downloads\WhatsApp Image 2024-10-24 at 17.39.40.jpeg" alt="Tap the rat to earn tokens!" onclick="tapRat()">
+            <div id="taps-left">Taps Left: 1000</div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button onclick="openHome()">Home</button>
+        <!-- Leaderboard Button -->
+<button onclick="openLeaderboard()">Leaderboard</button>
+
+<!-- Leaderboard Modal -->
+<div id="leaderboard-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLeaderboard()">&times;</span>
+        <h2>Leaderboard</h2>
+        <div id="particles"></div>
+        <div id="leaderboard">
+            <!-- Top 20 Players -->
+            <ul id="leaderboard-list"></ul>
+        </div>
+        <!-- User's Rank and Rat Token Count -->
+        <div id="user-rank">
+            Your Rank: <span id="rank-position">Loading...</span><br>
+            Rat Tokens: <span id="user-tokens">0</span>
+        </div>
+    </div>
+</div>
+<!-- Tasks Button -->
+<button onclick="openTasks()">Tasks</button>
+
+<!-- Tasks Modal -->
+<div id="tasks-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeTasks()">&times;</span>
+        <h2>Tasks to Earn Tokens</h2>
+        <div id="wave-particles"></div>
+        <div id="tasks-list">
+            <h3>Complete Tasks to Earn Tokens</h3>
+            <ul>
+                <li>
+                    <a href="https://www.tiktok.com/@georgeobuya3?_t=8qkwg6653bC&_r=1" target="_blank" onclick="completeTask('tiktok')">Follow Rats on TikTok</a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/@cybergeks?si=SJU_PKUWy23f6Hjy" target="_blank" onclick="completeTask('youtube')">Subscribe to YouTube</a>
+                </li>
+                <li>
+                    <a href="#" onclick="completeTask('twitter')">Follow us on Twitter</a>
+                </li>
+                <li>
+                    <a href="#" onclick="completeTask('telegram')">Join us on Telegram</a>
+                </li>
+            </ul>
+        </div>
+        <div id="user-tokens-display">
+            Your Tokens: <span id="user-tokens">0</span>
+        </div>
+    </div>
+</div>
+<!-- Button to open the Referral Modal -->
+<button onclick="openReferral()">Referral</button>
+
+<!-- Referral Modal -->
+<div id="referral-modal" class="modal">
+    <div class="modal-content referral-content">
+        <span class="close" onclick="closeReferral()">&times;</span>
+        <h2>Invite Friends and Earn 1000 Tokens</h2>
+        <p>Share your referral link:</p>
+        <input type="text" id="referral-link" value="https://example.com/referral" readonly>
+        <button onclick="copyReferralLink()">Copy Link</button>
+        <p>Earn 1000 tokens for each friend who signs up using your referral link!</p>
+        <div id="burst-particles"></div> <!-- Particle Container -->
+    </div>
+</div>
+
+    </nav>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Mouse emoji -->
+    <div id="mouse-emoji">🐭</div>
+
+    <!-- Modal for tasks and referral links -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
